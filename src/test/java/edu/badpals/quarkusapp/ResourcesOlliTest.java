@@ -118,7 +118,7 @@ class ResourcesOlliTest {
         em.find(Orden.class, pedidos.get(0).getId()).delete();
     }
 
-    /*// Si la usuaria o el item no existen el controlador devuelve 404
+    // Si la usuaria o el item no existen el controlador devuelve 404
     @Test
     public void test_post_ko() {
         given()
@@ -136,7 +136,7 @@ class ResourcesOlliTest {
                 .post("/ordena")
                 .then()
                 .statusCode(404);
-    }*/
+    }
 
     /**
      * Obten los pedidos de una usuaria mediante
