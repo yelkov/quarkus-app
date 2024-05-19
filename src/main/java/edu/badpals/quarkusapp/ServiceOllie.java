@@ -27,11 +27,11 @@ public class ServiceOllie {
     }
 
 
-    /*public List<Orden> obtenerPedidoUsuaria(String nombre_usuaria) {
+    public List<Orden> obtenerPedidoUsuaria(String nombre_usuaria) {
         return Orden.findByUserName(nombre_usuaria);
-    }*/
-
-    public List<Orden> cargaOrden(String usuaria_nombre) {
-        return Orden.findByUserName(usuaria_nombre);
     }
+
+    /*public List<Orden> cargaOrden(String usuaria_nombre) {
+        return Orden.findByUserName(usuaria_nombre);
+    }*/
 }

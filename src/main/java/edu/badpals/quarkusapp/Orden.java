@@ -3,6 +3,7 @@ package edu.badpals.quarkusapp;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -37,9 +38,9 @@ public class Orden extends PanacheEntityBase {
     @JoinColumn(name="item", referencedColumnName = "nombre_item")
     public Item item;
 
-    /*public static List<Orden> findByUserName(String nombre_usuaria) {
+    public static List<Orden> findByUserName(String nombre_usuaria) {
         List<Orden> pedidos = Orden.findAll().list();
-        List<Orden> pedidosFiltrados = null;
+        List<Orden> pedidosFiltrados = new ArrayList<>();
         Usuaria usuaria = Usuaria.find("nombre",nombre_usuaria).firstResult();
         if ( usuaria != null){
             for (Orden pedido : pedidos){
@@ -49,16 +50,16 @@ public class Orden extends PanacheEntityBase {
             }
         }
         return pedidosFiltrados;
-    }*/
+    }
 
-    public static List<Orden> findByUserName(String name) {
+    /*public static List<Orden> findByUserName(String name) {
         List<Orden> ordenes = Orden.listAll();
         List<Orden> ordenesByName = ordenes
                 .stream()
                 .filter(o -> o.getUser().getNombre().equalsIgnoreCase(name))
                 .collect(Collectors.toList());
         return ordenesByName.isEmpty()? List.of(): ordenesByName;
-    }
+    }*/
 
     public int getId() {
         return id;
