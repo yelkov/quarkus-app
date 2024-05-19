@@ -6,7 +6,6 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import java.awt.geom.RectangularShape;
 import java.util.Optional;
 
 @Path("/")
@@ -39,7 +38,7 @@ public class ResourcesOlli {
     public Response orden(Orden orden){
         Usuaria usuaria = orden.getUser();
         Item item = orden.getItem();
-        return service.crearPedido(usuaria,item)?
+        return service.isOrdenCreada(usuaria,item)?
                 Response.status(201).entity(orden).build():
                 Response.status(404).build();
     }

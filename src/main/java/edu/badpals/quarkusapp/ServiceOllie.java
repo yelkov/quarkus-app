@@ -10,7 +10,7 @@ public class ServiceOllie {
     }
 
     @Transactional
-    public boolean crearPedido(Usuaria user, Item item){
+    public boolean isOrdenCreada(Usuaria user, Item item){
         Usuaria usuaria = Usuaria.find("nombre",user.getNombre()).firstResult();
         Item producto = Item.find("nombre",item.getNombre()).firstResult();
             if(usuaria != null && producto != null){
@@ -22,5 +22,7 @@ public class ServiceOllie {
             }
 
     }
+
+
 
 }
