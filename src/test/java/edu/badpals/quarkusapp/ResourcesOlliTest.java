@@ -165,7 +165,7 @@ class ResourcesOlliTest {
      * ha de retornar el nombre y la calidad
      * del Item indicado de la base de datos.
      */
-    /*@Test
+    @Test
     public void test_get_item() {
 
         // Si el item existe la respuesta es 200
@@ -186,6 +186,6 @@ class ResourcesOlliTest {
                 .get("/item/{nombre}")
                 .then()
                 .statusCode(404);
-    }*/
+    }
 
 }

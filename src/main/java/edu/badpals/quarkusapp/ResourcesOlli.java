@@ -61,4 +61,15 @@ public class ResourcesOlli {
     public List<Orden> list(@PathParam("usuaria") String usuaria) {
         return service.cargaOrden(usuaria);
     }*/
+
+    @GET
+    @Path("item/{nombre}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getItem(@PathParam("nombre")String nombre_item){
+        Optional<Item> item = Item.findByIdOptional(nombre_item);
+        return item.isPresent()?
+                Response.status(200).entity(item).build():
+                Response.status(404).build();
+    }
+
 }

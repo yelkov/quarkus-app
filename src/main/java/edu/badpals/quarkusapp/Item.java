@@ -16,14 +16,14 @@ public class Item extends PanacheEntityBase {
         this.nombre = nombre;
     }
 
-    public Item(String nombre, int calidad) {
+    public Item(String nombre, int quality) {
         this.nombre = nombre;
-        this.calidad = calidad;
+        this.quality = quality;
     }
 
-    public Item(String nombre, int calidad, String tipo) {
+    public Item(String nombre, int quality, String tipo) {
         this.nombre = nombre;
-        this.calidad = calidad;
+        this.quality = quality;
         this.tipo = tipo;
     }
 
@@ -32,7 +32,7 @@ public class Item extends PanacheEntityBase {
     private String nombre = "";
 
     @Column(name="calidad")
-    private int calidad = 0;
+    private int quality = 0;
 
     @Column(name="tipo")
     private String tipo;
@@ -45,12 +45,12 @@ public class Item extends PanacheEntityBase {
         this.nombre = nombre;
     }
 
-    public int getCalidad() {
-        return calidad;
+    public int getQuality() {
+        return quality;
     }
 
-    public void setCalidad(int calidad) {
-        this.calidad = calidad;
+    public void setQuality(int quality) {
+        this.quality = quality;
     }
 
     public String getTipo() {
@@ -65,7 +65,7 @@ public class Item extends PanacheEntityBase {
     public String toString() {
         return "Item{" +
                 "nombre='" + nombre + '\'' +
-                ", calidad=" + calidad +
+                ", calidad=" + quality +
                 ", tipo='" + tipo + '\'' +
                 '}';
     }
