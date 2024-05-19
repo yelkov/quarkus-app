@@ -38,7 +38,7 @@ class ResourcesOlliTest {
      * "Wellcome Ollivanders!""
      */
 
-    /*@Test
+    @Test
     public void test_wellcome() {
         given()
                 .contentType(ContentType.TEXT)
@@ -47,7 +47,7 @@ class ResourcesOlliTest {
                 .then()
                 .statusCode(200)
                 .body(is("Wellcome Ollivanders!"));
-    }*/
+    }
 
     /**
      * La peticion

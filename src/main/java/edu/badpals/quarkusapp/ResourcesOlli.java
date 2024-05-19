@@ -13,8 +13,9 @@ public class ResourcesOlli {
     ServiceOllie service;
 
     @GET
+    @Path("wellcome")
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return "Hello from Quarkus REST";
+        return "Wellcome Ollivanders!";
     }
 }
