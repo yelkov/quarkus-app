@@ -22,7 +22,7 @@ public class Orden extends PanacheEntityBase {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_orden")
     public int id;
 

@@ -4,6 +4,9 @@ import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.http.ContentType;
 import jakarta.inject.Inject;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.core.MediaType;
 import org.assertj.core.api.Assertions;
@@ -18,6 +21,9 @@ import static org.hamcrest.Matchers.equalTo;
 
 @QuarkusTest
 class ResourcesOlliTest {
+
+    @Inject
+    EntityManager em;
 
     @Inject
     ResourcesOlli resources;

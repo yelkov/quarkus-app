@@ -1,6 +1,7 @@
 package edu.badpals.quarkusapp;
 
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -34,6 +35,7 @@ public class ResourcesOlli {
     @POST
     @Path("ordena")
     @Consumes(MediaType.APPLICATION_JSON)
+    @Transactional
     public Response orden(Orden orden){
         Usuaria usuaria = orden.getUser();
         Item item = orden.getItem();

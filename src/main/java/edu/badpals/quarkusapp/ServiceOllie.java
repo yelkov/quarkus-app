@@ -11,18 +11,16 @@ public class ServiceOllie {
 
     @Transactional
     public boolean crearPedido(Usuaria user, Item item){
-        Orden orden = Orden.find("user",user).firstResult();
-        if(orden != null ){
-            return true;
-        }else{
-            if(Usuaria.find("nombre",user.getNombre()) != null && Item.find("nombre",item.getNombre()) != null){
-                orden = new Orden(user,item);
+        Usuaria usuaria = Usuaria.find("nombre",user.getNombre()).firstResult();
+        Item producto = Item.find("nombre",item.getNombre()).firstResult();
+            if(usuaria != null && producto != null){
+                Orden orden = new Orden(usuaria,producto);
                 orden.persist();
                 return true;
             }else{
                 return false;
             }
-        }
+
     }
 
 }
