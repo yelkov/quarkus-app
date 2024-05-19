@@ -114,8 +114,8 @@ class ResourcesOlliTest {
         Assertions.assertThat(pedidos).hasSize(2);
         Assertions.assertThat(pedidos.get(0).getUser().getNombre()).isEqualTo("Hermione");
         // AgedBrie tiene id < 100L por lo que entra en el index 0 de pedidos
-        Assertions.assertThat(pedidos.get(0).getItem().getNombre()).isEqualToIgnoringCase("AgedBrie");
-        em.find(Orden.class, pedidos.get(0).getId()).delete();
+        Assertions.assertThat(pedidos.get(1).getItem().getNombre()).isEqualToIgnoringCase("AgedBrie");
+        em.find(Orden.class, pedidos.get(1).getId()).delete();
     }
 
     // Si la usuaria o el item no existen el controlador devuelve 404
@@ -144,7 +144,7 @@ class ResourcesOlliTest {
      *      /pedidos/{usuaria}
      */
 
-    /*@Test
+    @Test
     public void test_pedidos_usuaria() {
 
         List<Map<String, Object>> pedidos =
@@ -157,7 +157,7 @@ class ResourcesOlliTest {
         Assertions.assertThat(pedidos).hasSize(1);
         Assertions.assertThat(pedidos.get(0).get("user")).hasFieldOrPropertyWithValue("nombre", "Hermione");
         Assertions.assertThat(pedidos.get(0).get("item")).hasFieldOrPropertyWithValue("nombre", "+5 Dexterity Vest");
-    }*/
+    }
 
     /**
      * La peticion

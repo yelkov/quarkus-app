@@ -68,5 +68,5 @@ VALUES
 	100,"Doobey","Elixir of the Mongoose"
 ),
 (
-	200,"Hermione","AgedBrie"
+	200,"Hermione","+5 Dexterity Vest"
 );

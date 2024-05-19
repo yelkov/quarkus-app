@@ -6,6 +6,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.util.List;
 import java.util.Optional;
 
 @Path("/")
@@ -43,4 +44,21 @@ public class ResourcesOlli {
                 Response.status(404).build();
     }
 
+
+    /*@GET
+    @Path("pedidos/{usuaria}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public List<Orden> getPedidosUsuaria(@PathParam("usuaria")String nombre_usuaria){
+        return service.obtenerPedidoUsuaria(nombre_usuaria);
+    }*/
+
+    @GET
+    @Path("/pedidos/{usuaria}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    // curl -w "\n" http://localhost:8080/pedidos/Hermione -v
+    public List<Orden> list(@PathParam("usuaria") String usuaria) {
+        return service.cargaOrden(usuaria);
+    }
 }

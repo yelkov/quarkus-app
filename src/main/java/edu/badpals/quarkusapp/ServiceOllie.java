@@ -3,6 +3,9 @@ package edu.badpals.quarkusapp;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @ApplicationScoped
 public class ServiceOllie {
     public ServiceOllie(){
@@ -24,5 +27,11 @@ public class ServiceOllie {
     }
 
 
+    /*public List<Orden> obtenerPedidoUsuaria(String nombre_usuaria) {
+        return Orden.findByUserName(nombre_usuaria);
+    }*/
 
+    public List<Orden> cargaOrden(String usuaria_nombre) {
+        return Orden.findByUserName(usuaria_nombre);
+    }
 }
