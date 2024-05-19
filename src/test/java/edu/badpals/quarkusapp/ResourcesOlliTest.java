@@ -86,7 +86,7 @@ class ResourcesOlliTest {
      * La peticion ha de retornar la orden de pedido JSON
      * y status code 201 si ha sido generada y 404 en caso contrario.
      */
-    /*@Test
+    @Test
     @Transactional
     public void test_post_ok() {
 
@@ -101,7 +101,7 @@ class ResourcesOlliTest {
                 .body("user.nombre", equalTo("Hermione"),
                         "item.nombre", equalTo("AgedBrie"));
 
-        // rollback BBDD
+        /*// rollback BBDD
         TypedQuery<Orden> query = em.createQuery("select orden from Orden orden join orden.user user where user.nombre = 'Hermione'", Orden.class);
         List<Orden> pedidos = query.getResultList();
         Assertions.assertThat(pedidos).isNotNull();
@@ -109,8 +109,8 @@ class ResourcesOlliTest {
         Assertions.assertThat(pedidos.get(0).getUser().getNombre()).isEqualTo("Hermione");
         // AgedBrie tiene id < 100L por lo que entra en el index 0 de pedidos
         Assertions.assertThat(pedidos.get(0).getItem().getNombre()).isEqualToIgnoringCase("AgedBrie");
-        em.find(Orden.class, pedidos.get(0).getId()).delete();
-    }*/
+        em.find(Orden.class, pedidos.get(0).getId()).delete();*/
+    }
 
     /*// Si la usuaria o el item no existen el controlador devuelve 404
     @Test

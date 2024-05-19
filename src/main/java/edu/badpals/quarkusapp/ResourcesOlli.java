@@ -1,13 +1,11 @@
 package edu.badpals.quarkusapp;
 
 import jakarta.inject.Inject;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.awt.geom.RectangularShape;
 import java.util.Optional;
 
 @Path("/")
@@ -32,4 +30,16 @@ public class ResourcesOlli {
                 Response.status(Response.Status.OK).entity(usuaria).build():
                 Response.status(Response.Status.NOT_FOUND).build();
     }
+
+    @POST
+    @Path("ordena")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response orden(Orden orden){
+        Usuaria usuaria = orden.getUser();
+        Item item = orden.getItem();
+        return service.crearPedido(usuaria,item)?
+                Response.status(201).entity(orden).build():
+                Response.status(404).build();
+    }
+
 }
