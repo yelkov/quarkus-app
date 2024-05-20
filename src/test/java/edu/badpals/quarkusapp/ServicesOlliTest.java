@@ -53,13 +53,13 @@ public class ServicesOlliTest {
      * de la clase Orden a la tabla t_ordenes
      * El id de esta clase ha de seguir una estrategia Identity
      */
-    /*@Test
+    @Test
     public void test_mapping_orden() {
         Orden pedido = em.find(Orden.class, 100L);
         Assertions.assertThat(pedido).isNotNull();
         Assertions.assertThat(pedido.getUser().getNombre()).isEqualTo("Doobey");
         Assertions.assertThat(pedido.getItem().getNombre()).isEqualToIgnoringCase("Elixir of the Mongoose");
-    }*/
+    }
 
     /** SERVICIO */
 
