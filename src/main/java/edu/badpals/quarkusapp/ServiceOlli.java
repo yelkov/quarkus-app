@@ -45,6 +45,15 @@ public class ServiceOlli {
                 new Item();
     }
 
+    public Orden comanda(String nombre_usuaria, String nombre_item) {
+        Usuaria usuaria = Usuaria.findById(nombre_usuaria);
+        Item item = Item.findById(nombre_item);
+
+        Orden orden = new Orden(usuaria,item);
+        orden.persist();
+        return orden;
+    }
+
 
     /*public List<Orden> cargaOrden(String usuaria_nombre) {
         return Orden.findByUserName(usuaria_nombre);

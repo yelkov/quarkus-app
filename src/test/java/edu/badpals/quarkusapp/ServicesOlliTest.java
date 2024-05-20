@@ -3,6 +3,8 @@ package edu.badpals.quarkusapp;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -160,7 +162,7 @@ public class ServicesOlliTest {
      *
      * El metodo devuelve la orden de tipo Orden creada.
      */
-    /*@Test
+    @Test
     @Transactional
     public void test_comanda_ok() {
         Assertions.assertThat(servicio).isNotNull();
@@ -175,11 +177,10 @@ public class ServicesOlliTest {
 
         Assertions.assertThat(pedidos).isNotNull();
         Assertions.assertThat(pedidos).hasSize(2);
-        Assertions.assertThat(pedidos.get(0).getUser().getNombre()).isEqualTo("Hermione");
-        // AgedBrie tendra una id < 100L por lo que se encuentra en el index 0 de pedidos
-        Assertions.assertThat(pedidos.get(0).getItem().getNombre()).isEqualToIgnoringCase("AgedBrie");
-        em.find(Orden.class, pedidos.get(0).getId()).delete();
-    }*/
+        Assertions.assertThat(pedidos.get(1).getUser().getNombre()).isEqualTo("Hermione");
+        Assertions.assertThat(pedidos.get(1).getItem().getNombre()).isEqualToIgnoringCase("AgedBrie");
+        em.find(Orden.class, pedidos.get(1).getId()).delete();
+    }
 
     /**
      * Implementa el metodo comanda del servicio
