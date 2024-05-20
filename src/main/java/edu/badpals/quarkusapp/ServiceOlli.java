@@ -38,6 +38,13 @@ public class ServiceOlli {
         return Orden.findByUserName(nombre_usuaria);
     }
 
+    public Item cargaItem(String nombre_item) {
+        Optional<Item> item = Item.findByIdOptional(nombre_item);
+        return item.isPresent()?
+                item.get():
+                new Item();
+    }
+
     /*public List<Orden> cargaOrden(String usuaria_nombre) {
         return Orden.findByUserName(usuaria_nombre);
     }*/
