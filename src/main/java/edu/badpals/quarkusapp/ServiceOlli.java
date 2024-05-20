@@ -48,9 +48,13 @@ public class ServiceOlli {
     public Orden comanda(String nombre_usuaria, String nombre_item) {
         Usuaria usuaria = Usuaria.findById(nombre_usuaria);
         Item item = Item.findById(nombre_item);
+        Orden orden = null;
 
-        Orden orden = new Orden(usuaria,item);
-        orden.persist();
+        if (usuaria != null && item != null){
+            orden = new Orden(usuaria,item);
+            orden.persist();
+            return orden;
+        }
         return orden;
     }
 
