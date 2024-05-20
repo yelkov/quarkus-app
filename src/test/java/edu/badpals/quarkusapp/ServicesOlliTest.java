@@ -280,12 +280,12 @@ public class ServicesOlliTest {
         Assertions.assertThat(ordenes).isEmpty();
     }
 
-    /*// No se ordenan items que no existan en la base de datos
+    // No se ordenan items que no existan en la base de datos
     @Test
     @Transactional
     public void test_ordenar_multiples_items_no_item() {
         Assertions.assertThat(servicio).isNotNull();
         List<Orden> ordenes = servicio.comandaMultiple("Hermione", Arrays.asList("Guardapelo Salazar", "Reliquias de la Muerte"));
         Assertions.assertThat(ordenes).isEmpty();
-    }*/
+    }
 }
