@@ -34,7 +34,7 @@ public class ServiceOlli {
     }
 
 
-    public List<Orden> obtenerPedidoUsuaria(String nombre_usuaria) {
+    public List<Orden> cargaOrden(String nombre_usuaria) {
         return Orden.findByUserName(nombre_usuaria);
     }
 
@@ -44,6 +44,7 @@ public class ServiceOlli {
                 item.get():
                 new Item();
     }
+
 
     /*public List<Orden> cargaOrden(String usuaria_nombre) {
         return Orden.findByUserName(usuaria_nombre);

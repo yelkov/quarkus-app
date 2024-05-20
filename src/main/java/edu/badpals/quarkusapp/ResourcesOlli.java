@@ -50,7 +50,7 @@ public class ResourcesOlli {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public List<Orden> getPedidosUsuaria(@PathParam("usuaria")String nombre_usuaria){
-        return service.obtenerPedidoUsuaria(nombre_usuaria);
+        return service.cargaOrden(nombre_usuaria);
     }
 
     /*@GET

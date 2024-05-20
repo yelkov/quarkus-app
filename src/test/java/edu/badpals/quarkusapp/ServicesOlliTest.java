@@ -6,6 +6,8 @@ import jakarta.persistence.PersistenceContext;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 @QuarkusTest
 public class ServicesOlliTest {
 
@@ -129,7 +131,7 @@ public class ServicesOlliTest {
      * Si no existe, devuelve una lista vacía.
      */
 
-    /*@Test
+    @Test
     public void test_carga_orden() {
         Assertions.assertThat(servicio).isNotNull();
         List<Orden> ordenes = servicio.cargaOrden("Hermione");
@@ -139,15 +141,15 @@ public class ServicesOlliTest {
         Assertions.assertThat(ordenes.get(0).getItem().getNombre()).isEqualTo("+5 Dexterity Vest");
         // Assertions.assertThat(ordenes).allMatch(orden -> orden.getUser().getNombre().equalsIgnoreCase("Hermione"));
         // Assertions.assertThat(ordenes).allMatch(orden -> orden.getItem().getNombre().equalsIgnoreCase("+5 Dexterity Vest"));
-    }*/
+    }
 
-    /*@Test
+    @Test
     public void test_carga_orden_no_existe() {
         Assertions.assertThat(servicio).isNotNull();
         List<Orden> ordenes = servicio.cargaOrden("Severus");
         Assertions.assertThat(ordenes).isNotNull();
         Assertions.assertThat(ordenes).isEmpty();
-    }*/
+    }
 
     /**
      * Implementa el metodo "comanda" del servicio
