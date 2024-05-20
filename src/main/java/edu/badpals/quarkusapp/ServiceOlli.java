@@ -3,9 +3,7 @@ package edu.badpals.quarkusapp;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @ApplicationScoped
 public class ServiceOlli {
@@ -61,9 +59,17 @@ public class ServiceOlli {
     }
 
     public List<Orden> comandaMultiple(String nombre_usuaria, List<String> items) {
+        Usuaria usuaria = Usuaria.findById(nombre_usuaria);
+        if (usuaria == null){
+            return Collections.emptyList();
+        }
+
         List<Orden> ordenesMultiples = new ArrayList<>();
         for(String item : items){
-            ordenesMultiples.add(comanda(nombre_usuaria,item));
+            Orden orden = this.comanda(nombre_usuaria,item);
+            if (orden != null){
+                ordenesMultiples.add(orden);
+            }
         }
         return ordenesMultiples;
     }
