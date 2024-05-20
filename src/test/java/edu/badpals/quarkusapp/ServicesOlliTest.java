@@ -206,7 +206,7 @@ public class ServicesOlliTest {
      * para que NO permita generar pedidos de productos
      * si no existe el item en la base de datos.
      */
-    /*@Test
+    @Test
     public void test_comanda_no_item() {
         Assertions.assertThat(servicio).isNotNull();
         Orden orden = servicio.comanda("Hermione", "Reliquias de la muerte");
@@ -218,7 +218,7 @@ public class ServicesOlliTest {
 
         Orden pedido = em.find(Orden.class, 3L);
         Assertions.assertThat(pedido).isNull();
-    }*/
+    }
 
     /**
      * Modifica el metodo comanda para que
