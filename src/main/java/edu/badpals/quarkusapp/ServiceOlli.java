@@ -3,12 +3,11 @@ package edu.badpals.quarkusapp;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
-public class ServiceOllie {
-    public ServiceOllie(){
+public class ServiceOlli {
+    public ServiceOlli(){
 
     }
 

@@ -13,7 +13,7 @@ import java.util.Optional;
 public class ResourcesOlli {
 
     @Inject
-    ServiceOllie service;
+    ServiceOlli service;
 
     @GET
     @Path("wellcome")
