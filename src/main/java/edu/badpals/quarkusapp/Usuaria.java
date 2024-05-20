@@ -19,10 +19,10 @@ public class Usuaria extends PanacheEntityBase {
 
     @Id
     @Column(name="nombre_usuaria")
-    private String nombre;
+    private String nombre = "";
 
     @Column(name="destreza")
-    private int destreza;
+    private int destreza = 0;
 
     public String getNombre() {
         return nombre;
