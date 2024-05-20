@@ -50,7 +50,8 @@ public class ServiceOlli {
         Item item = Item.findById(nombre_item);
         Orden orden = null;
 
-        if (usuaria != null && item != null){
+        if (usuaria != null && item != null
+            && usuaria.getDestreza() > item.getQuality()){
             orden = new Orden(usuaria,item);
             orden.persist();
             return orden;
