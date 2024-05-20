@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 @QuarkusTest
@@ -249,7 +250,7 @@ public class ServicesOlliTest {
      * No se ordenan items que no existan en la base de datos.
      */
 
-    /*@Test
+    @Test
     @Transactional
     public void test_ordenar_multiples_items_ok() {
         Assertions.assertThat(servicio).isNotNull();
@@ -263,12 +264,12 @@ public class ServicesOlliTest {
         Assertions.assertThat(pedidos).isNotNull();
         Assertions.assertThat(pedidos).hasSize(3);
         Assertions.assertThat(pedidos.get(0).getUser().getNombre()).isEqualTo("Hermione");
-        Assertions.assertThat(pedidos.get(0).getItem().getNombre()).isEqualToIgnoringCase("AgedBrie");
-        Assertions.assertThat(pedidos.get(1).getItem().getNombre()).isEqualToIgnoringCase("Elixir of the Mongoose");
-        Assertions.assertThat(pedidos.get(2).getItem().getNombre()).isEqualToIgnoringCase("+5 Dexterity Vest");
+        Assertions.assertThat(pedidos.get(0).getItem().getNombre()).isEqualToIgnoringCase("+5 Dexterity Vest");
+        Assertions.assertThat(pedidos.get(1).getItem().getNombre()).isEqualToIgnoringCase("AgedBrie");
+        Assertions.assertThat(pedidos.get(2).getItem().getNombre()).isEqualToIgnoringCase("Elixir of the Mongoose");
         em.find(Orden.class, pedidos.get(1).getId()).delete();
-        em.find(Orden.class, pedidos.get(0).getId()).delete();
-    }*/
+        em.find(Orden.class, pedidos.get(2).getId()).delete();
+    }
 
     /*// No se permiten ordenes si el usuario no existe en la base de datos
     @Test
