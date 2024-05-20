@@ -68,10 +68,10 @@ public class ServicesOlliTest {
      * que es una dependencia Quarkus
      */
 
-   /* @Test
+    @Test
     public void test_inyeccion_servicio() {
         Assertions.assertThat(servicio).isNotNull();
-    }*/
+    }
 
     /**
      * Implementa el metodo cargaUsuaria del servicio.
