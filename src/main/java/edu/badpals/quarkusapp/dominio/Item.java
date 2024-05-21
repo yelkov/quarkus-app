@@ -1,4 +1,4 @@
-package edu.badpals.quarkusapp;
+package edu.badpals.quarkusapp.dominio;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Column;

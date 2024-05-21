@@ -3,6 +3,9 @@ package edu.badpals.quarkusapp;
 import java.util.Arrays;
 import java.util.List;
 
+import edu.badpals.quarkusapp.dominio.Item;
+import edu.badpals.quarkusapp.dominio.Orden;
+import edu.badpals.quarkusapp.dominio.Usuaria;
 import jakarta.persistence.TypedQuery;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

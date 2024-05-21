@@ -1,5 +1,8 @@
 package edu.badpals.quarkusapp;
 
+import edu.badpals.quarkusapp.dominio.Item;
+import edu.badpals.quarkusapp.dominio.Orden;
+import edu.badpals.quarkusapp.dominio.Usuaria;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.ArrayList;
