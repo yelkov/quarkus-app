@@ -1,5 +1,8 @@
 package edu.badpals.quarkusapp;
 
+import edu.badpals.quarkusapp.dominio.Item;
+import edu.badpals.quarkusapp.dominio.Orden;
+import edu.badpals.quarkusapp.dominio.Usuaria;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import jakarta.persistence.PersistenceContext;

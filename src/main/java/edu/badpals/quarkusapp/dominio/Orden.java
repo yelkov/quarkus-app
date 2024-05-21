@@ -1,11 +1,10 @@
-package edu.badpals.quarkusapp;
+package edu.badpals.quarkusapp.dominio;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Entity
 @Table(name="ordenes")
